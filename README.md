@@ -10,7 +10,7 @@
 
 [![Release](https://img.shields.io/badge/release-current-08b8d1?style=flat-square)](https://github.com/privacyportalUK/Thawamine/releases/latest)
 ![Device](https://img.shields.io/badge/device-iPhone_8_Plus-313b4a?style=flat-square)
-![iOS](https://img.shields.io/badge/iOS-16.7.10_%7C_16.7.16-313b4a?style=flat-square)
+![iOS](https://img.shields.io/badge/iOS-16.7.16-313b4a?style=flat-square)
 
 [![Download IPA](https://img.shields.io/badge/Download-IPA-08b8d1?style=for-the-badge)](https://github.com/privacyportalUK/Thawamine/releases/latest/download/Thawamine-R4.2.ipa)
 [![Source ZIP](https://img.shields.io/badge/Download-source-313b4a?style=for-the-badge)](https://github.com/privacyportalUK/Thawamine/releases/latest/download/Thawamine-R4.2-source.zip)
@@ -37,14 +37,13 @@ Built on **[Dopamine by opa334](https://github.com/opa334/Dopamine)** and **[Che
 ## Supported device
 
 > [!IMPORTANT]
-> **Only iPhone 8 Plus with model identifier `iPhone10,5` is supported.** The two builds below are enabled. Intermediate iOS versions, other iPhone models and other replacement-screen variants have not been verified.
+> **Only iPhone 8 Plus with model identifier `iPhone10,5` is supported.** Only iOS 16.7.16 (build `20H392`) is supported. Other iOS versions, iPhone models and replacement-screen variants are outside the verified support scope.
 
 | iOS | Build | Testing status |
 | :--- | :--- | :--- |
 | **16.7.16** | `20H392` | Jailbreak, ElleKit installation through Sileo and the package restart completed with responsive touch. |
-| **16.7.10** | `20H350` | The screen fix was tested successfully: jailbreak, tweak installation and respring worked. The current packaged app has not been separately retested on this version. |
 
-**This is not a continuous 16.7.10–16.7.16 compatibility range.** Check your exact model, version and build before installing.
+**Check your exact model, version and build before installing.**
 
 <details>
 <summary><strong>Testing and build details</strong></summary>
@@ -134,7 +133,7 @@ To install Thawamine, use the IPA and [installation steps](#install). Xcode and 
 | Host | macOS with full Xcode |
 | Toolchain | Theos, GNU make, Procursus ldid, trustcache, dpkg, libarchive, OpenSSL and zstd |
 | Compiler SDK | `iPhoneOS16.5.sdk` in Theos |
-| Device target | The exact iPhone 8 Plus builds in the [compatibility table](#supported-device) |
+| Device target | iPhone 8 Plus (`iPhone10,5`), iOS 16.7.16 (`20H392`) |
 
 **The compiler SDK version is separate from the iOS version on your phone.** It does not require changing the phone's iOS version.
 
