@@ -8,14 +8,14 @@
 
 <br>
 
-[![Release](https://img.shields.io/badge/release-R4.2-08b8d1?style=flat-square)](https://github.com/privacyportalUK/Thawamine/releases/tag/thawamine-r4.2)
+[![Release](https://img.shields.io/badge/release-current-08b8d1?style=flat-square)](https://github.com/privacyportalUK/Thawamine/releases/latest)
 ![Device](https://img.shields.io/badge/device-iPhone_8_Plus-313b4a?style=flat-square)
 ![iOS](https://img.shields.io/badge/iOS-16.7.10_%7C_16.7.16-313b4a?style=flat-square)
 
-[![Download IPA](https://img.shields.io/badge/Download_IPA-R4.2-08b8d1?style=for-the-badge)](https://github.com/privacyportalUK/Thawamine/releases/download/thawamine-r4.2/Thawamine-R4.2.ipa)
-[![Source ZIP](https://img.shields.io/badge/Source_ZIP-R4.2-313b4a?style=for-the-badge)](https://github.com/privacyportalUK/Thawamine/releases/download/thawamine-r4.2/Thawamine-R4.2-source.zip)
+[![Download IPA](https://img.shields.io/badge/Download-IPA-08b8d1?style=for-the-badge)](https://github.com/privacyportalUK/Thawamine/releases/latest/download/Thawamine-R4.2.ipa)
+[![Source ZIP](https://img.shields.io/badge/Download-source-313b4a?style=for-the-badge)](https://github.com/privacyportalUK/Thawamine/releases/latest/download/Thawamine-R4.2-source.zip)
 
-[Installation](#install) · [Compatibility](#supported-device) · [Release notes](https://github.com/privacyportalUK/Thawamine/releases/tag/thawamine-r4.2) · [PrivacyPortal guide](https://www.privacyportal.co.uk/blogs/free-rooting-tips-and-tricks/thawamine)
+[Installation](#install) · [Compatibility](#supported-device) · [Release notes](https://github.com/privacyportalUK/Thawamine/releases/latest) · [PrivacyPortal guide](https://www.privacyportal.co.uk/blogs/free-rooting-tips-and-tricks/thawamine)
 
 </div>
 
@@ -31,7 +31,7 @@ Built on **[Dopamine by opa334](https://github.com/opa334/Dopamine)** and **[Che
 | :--- | :--- |
 | **Replacement-screen handling** | Uses selective restarts to address the touch freeze seen on the tested iPhone 8 Plus. |
 | **Sileo & Zebra** | Registers both package-manager apps automatically. |
-| **Tweak support** | Retains package-manager and tweak support; ElleKit through Sileo was tested with the R4.2 runtime. |
+| **Tweak support** | Retains package-manager and tweak support; ElleKit installation through Sileo was tested successfully. |
 | **Device checks** | The app and restart helpers enforce the same exact model and iOS-build allowlist. |
 
 ## Supported device
@@ -41,8 +41,8 @@ Built on **[Dopamine by opa334](https://github.com/opa334/Dopamine)** and **[Che
 
 | iOS | Build | Testing status |
 | :--- | :--- | :--- |
-| **16.7.16** | `20H392` | **R4.2 runtime tested:** jailbreak, ElleKit installation through Sileo and the package restart completed with responsive touch. |
-| **16.7.10** | `20H350` | **Screen fix previously tested with R4.1:** jailbreak, tweak installation and respring worked. R4.2 retains support but has not been separately retested on this version. |
+| **16.7.16** | `20H392` | Jailbreak, ElleKit installation through Sileo and the package restart completed with responsive touch. |
+| **16.7.10** | `20H350` | The screen fix was tested successfully: jailbreak, tweak installation and respring worked. The current packaged app has not been separately retested on this version. |
 
 **This is not a continuous 16.7.10–16.7.16 compatibility range.** Check your exact model, version and build before installing.
 
@@ -56,11 +56,9 @@ On iOS 16.7.16, a follow-up USB diagnostic capture found successful app registra
 | App information | Value |
 | :--- | :--- |
 | Installed app name | **Thawamine** |
-| Release | **R4.2** |
 | Build | `2026.10.77` |
-| Runtime | `3.0.10-s4.2` |
 
-The renamed build passed compilation, regression and packaging checks. It retains the previously tested R4.2 runtime but has not been separately tested on a phone.
+The packaged Thawamine app passed compilation, regression and packaging checks. Its underlying jailbreak runtime was tested as described above; the renamed app has not been separately tested on a phone.
 
 </details>
 
@@ -72,8 +70,8 @@ Check **Settings → General → About** against the [compatibility table](#supp
 
 | You need | Download |
 | :--- | :--- |
-| A Mac or Windows PC, USB cable and Apple account for signing | **[Thawamine-R4.2.ipa](https://github.com/privacyportalUK/Thawamine/releases/download/thawamine-r4.2/Thawamine-R4.2.ipa)** |
-| Building it yourself | [Source ZIP](https://github.com/privacyportalUK/Thawamine/releases/download/thawamine-r4.2/Thawamine-R4.2-source.zip) · [Build instructions](#build-from-source) |
+| A Mac or Windows PC, USB cable and Apple account for signing | **[Download Thawamine IPA](https://github.com/privacyportalUK/Thawamine/releases/latest/download/Thawamine-R4.2.ipa)** |
+| Building it yourself | [Source ZIP](https://github.com/privacyportalUK/Thawamine/releases/latest/download/Thawamine-R4.2-source.zip) · [Build instructions](#build-from-source) |
 
 The **IPA is the installable app**. Downloading it in Safari alone does not install it.
 
@@ -143,7 +141,7 @@ To install Thawamine, use the IPA and [installation steps](#install). Xcode and 
 Set `THEOS` to your Theos installation, then run:
 
 ```sh
-git clone --recursive --branch thawamine-r4.2 https://github.com/privacyportalUK/Thawamine.git
+git clone --recursive https://github.com/privacyportalUK/Thawamine.git
 cd Thawamine
 bash scripts/build-package-ipa.sh
 ```
