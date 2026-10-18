@@ -12,8 +12,8 @@
 ![Device](https://img.shields.io/badge/device-iPhone_8_Plus-313b4a?style=flat-square)
 ![iOS](https://img.shields.io/badge/iOS-16.7.16-313b4a?style=flat-square)
 
-[![Download IPA](https://img.shields.io/badge/Download-IPA-08b8d1?style=for-the-badge)](https://github.com/privacyportalUK/Thawamine/releases/latest/download/Thawamine-R4.2.ipa)
-[![Source ZIP](https://img.shields.io/badge/Download-source-313b4a?style=for-the-badge)](https://github.com/privacyportalUK/Thawamine/releases/latest/download/Thawamine-R4.2-source.zip)
+[![Download IPA](https://img.shields.io/badge/Download-IPA-08b8d1?style=for-the-badge)](https://github.com/privacyportalUK/Thawamine/releases/latest/download/Thawamine.ipa)
+[![Source ZIP](https://img.shields.io/badge/Download-source-313b4a?style=for-the-badge)](https://github.com/privacyportalUK/Thawamine/releases/latest/download/Thawamine-source.zip)
 
 [Installation](#install) · [Compatibility](#supported-device) · [Release notes](https://github.com/privacyportalUK/Thawamine/releases/latest) · [PrivacyPortal guide](https://www.privacyportal.co.uk/blogs/free-rooting-tips-and-tricks/thawamine)
 
@@ -69,8 +69,8 @@ Check **Settings → General → About** against the [compatibility table](#supp
 
 | You need | Download |
 | :--- | :--- |
-| A Mac or Windows PC, USB cable and Apple account for signing | **[Download Thawamine IPA](https://github.com/privacyportalUK/Thawamine/releases/latest/download/Thawamine-R4.2.ipa)** |
-| Building it yourself | [Source ZIP](https://github.com/privacyportalUK/Thawamine/releases/latest/download/Thawamine-R4.2-source.zip) · [Build instructions](#build-from-source) |
+| A Mac or Windows PC, USB cable and Apple account for signing | **[Download Thawamine IPA](https://github.com/privacyportalUK/Thawamine/releases/latest/download/Thawamine.ipa)** |
+| Building it yourself | [Source ZIP](https://github.com/privacyportalUK/Thawamine/releases/latest/download/Thawamine-source.zip) · [Build instructions](#build-from-source) |
 
 The **IPA is the installable app**. Downloading it in Safari alone does not install it.
 
