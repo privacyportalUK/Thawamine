@@ -1,88 +1,144 @@
-# Thawamine (iPhone 8 Plus)
+<div align="center">
 
-> **R4.2 targets only iPhone 8 Plus (`iPhone10,5`) on iOS 16.7.10 (`20H350`) or iOS 16.7.16 (`20H392`). R4.2 has been tested and is working on iOS 16.7.16 with ElleKit and a third-party replacement screen; the same screen fix was previously validated on iOS 16.7.10 with R4.1. Other devices and iOS versions are unsupported.**
+# Thawamine
 
-Thawamine is the PrivacyPortal project for the replacement-screen touch freeze fix. The installed app is named **Thawamine**; R4.2 identifies the release.
+**Replacement-screen touch freeze fix · iPhone 8 Plus**
 
-This branding update uses build **2026.10.77** and retains the tested R4.2 runtime, **3.0.10-s4.2**. The renamed build is compiled and checked before publication, but has not been separately tested on a phone.
+<img src="https://cdn.shopify.com/s/files/1/0768/2372/4345/files/thawamine-r4-2-iphone-8-plus-ios-16-7-16.png?v=1792358260" alt="Thawamine — replacement-screen touch freeze fix for iPhone 8 Plus" width="900">
 
-Maintained by [PrivacyPortal](https://PrivacyPortal.co.uk).
+<br>
 
-**A jailbreak with a fix for the frozen or unresponsive touchscreen glitch after jailbreaking or restarting jailbreak services on an iPhone with a third-party replacement screen. Tested on iPhone 8 Plus with a third-party replacement screen: iOS 16.7.10 with R4.1, and iOS 16.7.16 with R4.2 and ElleKit.**
+[![Release](https://img.shields.io/badge/release-R4.2-08b8d1?style=flat-square)](https://github.com/privacyportalUK/Thawamine/releases/tag/thawamine-r4.2)
+![Device](https://img.shields.io/badge/device-iPhone_8_Plus-313b4a?style=flat-square)
+![iOS](https://img.shields.io/badge/iOS-16.7.10_%7C_16.7.16-313b4a?style=flat-square)
 
-Built on [Dopamine 3.0.10 by opa334 and contributors](https://github.com/opa334/Dopamine) and [Cheapamine by wumbomumbo and contributors](https://github.com/wumbomumbo/Cheapamine), including its selective restart approach. PrivacyPortal maintains the iPhone 8 Plus build, restart routing and automatic Sileo and Zebra registration.
+[![Download IPA](https://img.shields.io/badge/Download_IPA-R4.2-08b8d1?style=for-the-badge)](https://github.com/privacyportalUK/Thawamine/releases/download/thawamine-r4.2/Thawamine-R4.2.ipa)
+[![Source ZIP](https://img.shields.io/badge/Source_ZIP-R4.2-313b4a?style=for-the-badge)](https://github.com/privacyportalUK/Thawamine/releases/download/thawamine-r4.2/Thawamine-R4.2-source.zip)
 
-## Replacement-screen freeze fix
+[Installation](#install) · [Compatibility](#supported-device) · [Release notes](https://github.com/privacyportalUK/Thawamine/releases/tag/thawamine-r4.2) · [PrivacyPortal guide](https://www.privacyportal.co.uk/blogs/free-rooting-tips-and-tricks/thawamine)
 
-Some replacement screens can lose touch input when jailbreak services restart. Thawamine uses Cheapamine's selective restart approach to address the freeze encountered on the tested iPhone 8 Plus, while retaining package-manager and tweak support.
+</div>
 
-On the test iPhone 8 Plus (`iPhone10,5`) with a reported third-party replacement screen:
+---
 
-- **iOS 16.7.16 (`20H392`), R4.2:** jailbreak and ElleKit installation through Sileo succeeded, and touch remained responsive after the package restart. A follow-up USB diagnostic capture found successful app registration and restart, unchanged touch reset counters, stable SpringBoard/backboardd processes, and no relevant crash reports or kernel panics during the observation.
-- **iOS 16.7.10 (`20H350`), R4.1:** the same replacement-screen fix was previously confirmed working after jailbreak, tweak installation and respring. R4.2 retains this support, but has not been separately retested on 16.7.10.
+## What is Thawamine?
 
-Earlier touch-driver errors recovered before the R4.2 observation. These results cover this device and screen; other replacement-screen variants have not been verified.
+Thawamine is [PrivacyPortal](https://PrivacyPortal.co.uk)'s jailbreak build for the frozen or unresponsive touchscreen issue encountered on an iPhone 8 Plus with a third-party replacement screen.
 
-## Download R4.2
+Built on **[Dopamine by opa334](https://github.com/opa334/Dopamine)** and **[Cheapamine by wumbomumbo](https://github.com/wumbomumbo/Cheapamine)**, including Cheapamine's selective restart approach.
 
-- [Thawamine-R4.2.ipa](https://github.com/privacyportalUK/Thawamine/releases/download/thawamine-r4.2/Thawamine-R4.2.ipa)
-- [Thawamine-R4.2-source.zip](https://github.com/privacyportalUK/Thawamine/releases/download/thawamine-r4.2/Thawamine-R4.2-source.zip)
-- [Release notes](https://github.com/privacyportalUK/Thawamine/releases/tag/thawamine-r4.2)
+| Feature | What it does |
+| :--- | :--- |
+| **Replacement-screen handling** | Uses selective restarts to address the touch freeze seen on the tested iPhone 8 Plus. |
+| **Sileo & Zebra** | Registers both package-manager apps automatically. |
+| **Tweak support** | Retains package-manager and tweak support; ElleKit through Sileo was tested with the R4.2 runtime. |
+| **Device checks** | The app and restart helpers enforce the same exact model and iOS-build allowlist. |
 
 ## Supported device
 
-R4.2 permits **only iPhone 8 Plus (`iPhone10,5`) on iOS 16.7.10 (`20H350`) or iOS 16.7.16 (`20H392`)**. The app and restart helpers enforce the same exact model/build allowlist. Other devices and iOS versions are unsupported; compatibility must not be assumed.
+> [!IMPORTANT]
+> **Only iPhone 8 Plus with model identifier `iPhone10,5` is supported.** The two builds below are enabled. Intermediate iOS versions, other iPhone models and other replacement-screen variants have not been verified.
 
-R4.2 is tested and working on iOS 16.7.16 with ElleKit and the replacement screen described above. It retains support for the previously tested iOS 16.7.10 configuration. **This is not a continuous 16.7.10–16.7.16 compatibility range:** intermediate iOS builds are not enabled or tested.
+| iOS | Build | Testing status |
+| :--- | :--- | :--- |
+| **16.7.16** | `20H392` | **R4.2 runtime tested:** jailbreak, ElleKit installation through Sileo and the package restart completed with responsive touch. |
+| **16.7.10** | `20H350` | **Screen fix previously tested with R4.1:** jailbreak, tweak installation and respring worked. R4.2 retains support but has not been separately retested on this version. |
+
+**This is not a continuous 16.7.10–16.7.16 compatibility range.** Check your exact model, version and build before installing.
+
+<details>
+<summary><strong>Testing and build details</strong></summary>
+
+The test device was an iPhone 8 Plus (`iPhone10,5`) with a reported third-party replacement screen.
+
+On iOS 16.7.16, a follow-up USB diagnostic capture found successful app registration and restart, unchanged touch reset counters, stable SpringBoard/backboardd processes, and no relevant crash reports or kernel panics during the observation. Earlier touch-driver errors had recovered. These results cover that device and screen; they do not establish compatibility with every panel or tweak.
+
+| App information | Value |
+| :--- | :--- |
+| Installed app name | **Thawamine** |
+| Release | **R4.2** |
+| Build | `2026.10.77` |
+| Runtime | `3.0.10-s4.2` |
+
+The renamed build passed compilation, regression and packaging checks. It retains the previously tested R4.2 runtime but has not been separately tested on a phone.
+
+</details>
 
 ## Install
 
-### 1. Check your device and download the app
+### ① Check & download
 
-Check your model and iOS version in **Settings → General → About**. R4.2 is limited to **iPhone 8 Plus (`iPhone10,5`), iOS 16.7.10 (`20H350`) or iOS 16.7.16 (`20H392`)**. Other devices and iOS versions, including intermediate 16.7.x builds, are unsupported.
+Check **Settings → General → About** against the [compatibility table](#supported-device).
 
-Download [Thawamine-R4.2.ipa](https://github.com/privacyportalUK/Thawamine/releases/download/thawamine-r4.2/Thawamine-R4.2.ipa) to your computer. The **IPA is the installable app**; the source ZIP is for building it yourself. You will need a Mac or Windows PC, a USB cable, and an Apple account for signing.
+| You need | Download |
+| :--- | :--- |
+| A Mac or Windows PC, USB cable and Apple account for signing | **[Thawamine-R4.2.ipa](https://github.com/privacyportalUK/Thawamine/releases/download/thawamine-r4.2/Thawamine-R4.2.ipa)** |
+| Building it yourself | [Source ZIP](https://github.com/privacyportalUK/Thawamine/releases/download/thawamine-r4.2/Thawamine-R4.2-source.zip) · [Build instructions](#build-from-source) |
 
-### 2. Install the IPA
+The **IPA is the installable app**. Downloading it in Safari alone does not install it.
 
-One option is [Sideloadly for macOS or Windows](https://sideloadly.io/):
+### ② Sign & install
 
-1. Install Sideloadly from its official website. Windows users should follow its Apple iTunes/iCloud dependency instructions.
-2. Connect the iPhone by USB, unlock it, and accept **Trust This Computer** if prompted.
-3. Select the connected iPhone in Sideloadly and drag the downloaded **IPA** into the app.
-4. Enter your Apple account in Sideloadly, start installation, and complete any authentication prompts. Wait for installation to finish.
+One option is **[Sideloadly for macOS or Windows](https://sideloadly.io/)**. You can also use your existing working IPA signing tool.
 
-If you already have a working IPA signing tool, you can use it instead. Downloading the IPA in Safari alone does not install it.
+1. Install Sideloadly from its official website. Windows users should follow its iTunes/iCloud dependency instructions.
+2. Connect the iPhone by USB, unlock it and accept **Trust This Computer** if prompted.
+3. Select the phone in Sideloadly and drag the **IPA** into the app.
+4. Enter your Apple account, start installation and complete any authentication prompts. Wait for it to finish.
 
-### 3. Open the app and jailbreak
+### ③ Open & jailbreak
 
-1. If iOS asks you to trust the signing account, open **Settings → General → VPN & Device Management**, select that account's developer profile, and follow the trust prompt.
-2. If iOS requests **Developer Mode**, open **Settings → Privacy & Security → Developer Mode** and follow the restart and confirmation prompts. See [Apple's Developer Mode guide](https://developer.apple.com/documentation/xcode/enabling-developer-mode-on-a-device).
-3. Open the installed jailbreak app and tap **Jailbreak**. Allow setup and the service restart to finish.
-4. Unlock the phone and open **Sileo** or **Zebra**. R4.2 registers the package-manager apps automatically. Let the package manager refresh before installing packages.
+1. If prompted, trust the signing account under **Settings → General → VPN & Device Management**.
+2. If iOS requests **Developer Mode**, follow **Settings → Privacy & Security → Developer Mode** and the restart prompts. [Apple's guide →](https://developer.apple.com/documentation/xcode/enabling-developer-mode-on-a-device)
+3. Open **Thawamine**, tap **Jailbreak** and allow setup and the service restart to finish.
+4. Unlock the phone, open **Sileo** or **Zebra**, and let the package lists refresh before installing packages.
 
-### After restarting and refreshing the app
+> [!TIP]
+> After a full device restart, reopen **Thawamine** and tap **Jailbreak** again. A respring is different from restarting the phone.
+>
+> With a free Apple account, Sideloadly-signed apps normally need refreshing every **7 days**. Refresh or re-sign before expiry, retaining the same signing account and bundle identifier when updating.
 
-After a full power-off or device restart, open the jailbreak app and tap **Jailbreak** again. A respring is different from a full device restart.
+## Troubleshooting
 
-With a free Apple account, Sideloadly-signed apps normally need refreshing every **7 days**. Use Sideloadly's refresh feature or re-sign the IPA before it expires. If the jailbreak app stops opening, check its signing status first.
+<details>
+<summary><strong>Sileo or Zebra is missing</strong></summary>
 
-### Troubleshooting
+Open Thawamine's settings and use **Refresh Jailbreak Apps**, then check the Home Screen again.
 
-| What you see | What to do |
-| --- | --- |
-| Sileo or Zebra is missing after a successful jailbreak | Open the jailbreak app's settings and use **Refresh Jailbreak Apps**, then check the Home Screen again. |
-| Setup stops with an error | Save the exact error message, restart the phone normally, and try again. If it repeats, include the log when reporting the problem. |
-| The app will not open | Check the developer profile, Developer Mode prompt, and signing expiry. Re-sign using the same account and bundle identifier if needed. |
-| Touch becomes unresponsive | On iPhone 8 Plus, quickly press Volume Up, quickly press Volume Down, then hold Side until the Apple logo appears. After it restarts, check touch before jailbreaking again. Record which action caused the freeze. |
+</details>
 
-For PrivacyPortal information and contact options, visit **[PrivacyPortal.co.uk](https://PrivacyPortal.co.uk)**. When reporting a problem, include the device model, iOS version, release version, exact error, and what happened immediately before it. Remove account details and device identifiers from any shared logs.
+<details>
+<summary><strong>The app will not open, or setup stops with an error</strong></summary>
 
-## Build from source (developers only)
+- **App will not open:** check the developer profile, any Developer Mode prompt and signing expiry. Re-sign using the same account and bundle identifier if needed.
+- **Setup error:** save the exact message, restart the phone and try again. If it repeats, include the log when reporting the problem.
 
-**R4.2 targets iOS 16.7.10 and iOS 16.7.16 on the device listed above.** To install it, use the IPA and the installation steps above; Xcode and an SDK are not needed.
+</details>
 
-To compile the source, use macOS with full Xcode, Theos, GNU make, Procursus ldid, trustcache, dpkg, libarchive, OpenSSL and zstd. The build scripts require **iPhoneOS16.5.sdk** in Theos: this is the compiler SDK used to build the app, not the iOS version required on your phone. The SDK version does not require changing the iOS version on your phone.
+<details>
+<summary><strong>Touch becomes unresponsive</strong></summary>
+
+Quickly press **Volume Up**, quickly press **Volume Down**, then hold **Side** until the Apple logo appears. After restarting, check touch before jailbreaking again. Record which action triggered the freeze.
+
+</details>
+
+Need help? **[Contact PrivacyPortal](https://www.privacyportal.co.uk/pages/contact-us)** with your model identifier, iOS build, release, exact error and the steps that caused it. Remove account details and unique device identifiers from shared logs.
+
+## Build from source
+
+<details>
+<summary><strong>Developer toolchain & build commands</strong></summary>
+
+To install Thawamine, use the IPA and [installation steps](#install). Xcode and an SDK are needed only to compile the source.
+
+| Requirement | Details |
+| :--- | :--- |
+| Host | macOS with full Xcode |
+| Toolchain | Theos, GNU make, Procursus ldid, trustcache, dpkg, libarchive, OpenSSL and zstd |
+| Compiler SDK | `iPhoneOS16.5.sdk` in Theos |
+| Device target | The exact iPhone 8 Plus builds in the [compatibility table](#supported-device) |
+
+**The compiler SDK version is separate from the iOS version on your phone.** It does not require changing the phone's iOS version.
 
 Set `THEOS` to your Theos installation, then run:
 
@@ -94,12 +150,25 @@ bash scripts/build-package-ipa.sh
 
 The script builds and verifies the IPA. The release source ZIP includes recursive submodules, dependency sources and build records.
 
-## Credits and licenses
+</details>
 
-- [Dopamine](https://github.com/opa334/Dopamine) — opa334 and contributors.
-- [Cheapamine](https://github.com/wumbomumbo/Cheapamine) — wumbomumbo and contributors; the basis for selective restart support.
-- Sileo Team, Zebra Team, Procursus Team, ElleKit, and the upstream component authors listed in the [app credits](Application/Dopamine/UI/Settings/Credits.plist).
+## Credits & licences
 
-Original copyrights and licenses are retained in [LICENSE.md](LICENSE.md) and the [component license files](Application/Dopamine/Resources).
+| Project | Credit |
+| :--- | :--- |
+| **[Dopamine](https://github.com/opa334/Dopamine)** | **opa334 and contributors** — upstream jailbreak, based on Dopamine 3.0.10. |
+| **[Cheapamine](https://github.com/wumbomumbo/Cheapamine)** | **wumbomumbo and contributors** — the basis for selective restart support. |
+| **Sileo · Zebra · Procursus · ElleKit** | Their teams and the upstream component authors listed in the [app credits](Application/Dopamine/UI/Settings/Credits.plist). |
+| **[PrivacyPortal](https://PrivacyPortal.co.uk)** | Maintains this iPhone 8 Plus build, restart routing and automatic Sileo/Zebra registration. |
+
+Original copyrights and licences are retained in [LICENSE.md](LICENSE.md) and the [component licence files](Application/Dopamine/Resources).
 
 **This product includes software developed by the Sileo Team.**
+
+---
+
+<div align="center">
+
+**[PrivacyPortal.co.uk](https://PrivacyPortal.co.uk)** · [Full guide](https://www.privacyportal.co.uk/blogs/free-rooting-tips-and-tricks/thawamine) · [Releases](https://github.com/privacyportalUK/Thawamine/releases)
+
+</div>
