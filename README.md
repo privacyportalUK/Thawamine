@@ -56,7 +56,7 @@ On iOS 16.7.16, a follow-up USB diagnostic capture found successful app registra
 | App information | Value |
 | :--- | :--- |
 | Installed app name | **Thawamine** |
-| Build | `2026.10.77` |
+| Build | `2026.10.78` |
 
 The packaged Thawamine app passed compilation, regression and packaging checks. Its underlying jailbreak runtime was tested as described above; the renamed app has not been separately tested on a phone.
 
