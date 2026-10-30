@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Package a verified R4.2 build as IPA and a source ZIP."""
+"""Package a verified Thawamine build as IPA and a source ZIP."""
 import hashlib
 import json
 import os
@@ -12,7 +12,7 @@ import time
 import zipfile
 
 ROOT = Path(__file__).resolve().parents[1]
-PREFIX = 'Thawamine-R4.2'
+PREFIX = 'Thawamine'
 
 
 def git(*args):
@@ -66,7 +66,7 @@ def main():
     binary_commit = (artifacts / 'SOURCE_COMMIT.txt').read_text().strip()
     if not re.fullmatch(r'[0-9a-f]{40}', binary_commit):
         raise RuntimeError('Invalid binary source commit')
-    ipa_path = artifacts / 'Thawamine-R4.2-iPhone8Plus.ipa'
+    ipa_path = artifacts / 'Thawamine.ipa'
     ipa = ipa_path.read_bytes()
     verification = json.loads(subprocess.check_output([
         sys.executable, 'scripts/verify-package-ipa.py', str(ipa_path), binary_commit
@@ -86,7 +86,7 @@ def main():
         'build_tools': (artifacts / 'BUILD_TOOLS.txt').read_text(),
         'build_submodules': (artifacts / 'SUBMODULES.txt').read_text().splitlines(),
     }
-    with tempfile.TemporaryDirectory(prefix='cheapmine-release-') as directory:
+    with tempfile.TemporaryDirectory(prefix='thawamine-release-') as directory:
         staged = Path(directory)
         archive_path = staged / (PREFIX + '-source.zip')
         source_zip(archive_path)
