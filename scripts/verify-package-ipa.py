@@ -145,7 +145,7 @@ def validate(path, expected_commit=None):
         root = roots[0]
         info = plistlib.loads(archive.read(root + "Info.plist"))
         for key, expected in {"CFBundleIdentifier": "com.privacyportal.DopamineFresh",
-                              "CFBundleDisplayName": "Thawamine", "CFBundleVersion": "2026.10.77"}.items():
+                              "CFBundleDisplayName": "Thawamine", "CFBundleVersion": "2026.10.78"}.items():
             require(info.get(key) == expected, f"Wrong {key}: {info.get(key)!r}")
         executable_name = info.get("CFBundleExecutable")
         require(executable_name and "/" not in executable_name, "Invalid bundle executable name")

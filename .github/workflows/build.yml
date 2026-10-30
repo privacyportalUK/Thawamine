@@ -79,7 +79,7 @@ jobs:
       - name: Upload IPA and provenance
         uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
         with:
-          name: Thawamine-R4.2-iPhone8Plus-20H392
+          name: Thawamine
           path: .build/public-release/
           if-no-files-found: error
           retention-days: 30

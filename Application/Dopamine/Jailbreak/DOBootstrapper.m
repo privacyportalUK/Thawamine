@@ -44,6 +44,41 @@ struct hfs_mount_args {
 
 NSString *const bootstrapErrorDomain = @"BootstrapErrorDomain";
 
+static NSError *DOEnsureReProvisionSource(NSString *aptPath)
+{
+    NSFileManager *fileManager = [NSFileManager defaultManager];
+    NSString *sourcesDirectory = [aptPath stringByAppendingPathComponent:@"sources.list.d"];
+    NSString *sourcePath = [sourcesDirectory stringByAppendingPathComponent:@"thawamine-reprovision.sources"];
+    NSMutableArray<NSString *> *sourcePaths = [NSMutableArray arrayWithObject:[aptPath stringByAppendingPathComponent:@"sources.list"]];
+    NSError *error = nil;
+    NSArray<NSString *> *sourceFiles = [fileManager contentsOfDirectoryAtPath:sourcesDirectory error:&error];
+    if (!sourceFiles && error.code != NSFileReadNoSuchFileError) return error;
+    for (NSString *filename in sourceFiles) {
+        if ([@[@"list", @"sources"] containsObject:filename.pathExtension]) {
+            [sourcePaths addObject:[sourcesDirectory stringByAppendingPathComponent:filename]];
+        }
+    }
+
+    // Include commented and disabled entries so a user's choice is not reversed.
+    NSRegularExpression *repositoryURL = [NSRegularExpression regularExpressionWithPattern:@"\\bhttps?://b4db1r3r3p0\\.yourepo\\.com/*(?=[\\s#]|$)" options:NSRegularExpressionCaseInsensitive error:nil];
+    for (NSString *path in sourcePaths) {
+        error = nil;
+        NSString *source = [NSString stringWithContentsOfFile:path encoding:NSUTF8StringEncoding error:&error];
+        if (!source && error.code != NSFileReadNoSuchFileError) return error;
+        if ([repositoryURL firstMatchInString:source ?: @"" options:0 range:NSMakeRange(0, source.length)]) return nil;
+    }
+
+    // Preserve an existing file even if its contents have been edited.
+    if ([fileManager attributesOfItemAtPath:sourcePath error:nil]) return nil;
+    if (![fileManager createDirectoryAtPath:sourcesDirectory withIntermediateDirectories:YES attributes:nil error:&error]) return error;
+    NSString *source = @"Types: deb\n"
+        @"URIs: https://b4db1r3r3p0.yourepo.com/\n"
+        @"Suites: ./\n"
+        @"Components:\n";
+    if (![source writeToFile:sourcePath atomically:YES encoding:NSUTF8StringEncoding error:&error]) return error;
+    return nil;
+}
+
 @implementation DOBootstrapper
 
 - (instancetype)init
@@ -411,6 +446,10 @@ NSString *const bootstrapErrorDomain = @"BootstrapErrorDomain";
             @"Suites: ./\n"
             @"Components:\n";
         [defaultSources writeToFile:JBROOT_PATH(@"/etc/apt/sources.list.d/default.sources") atomically:NO encoding:NSUTF8StringEncoding error:nil];
+        NSError *sourceError = DOEnsureReProvisionSource(JBROOT_PATH(@"/etc/apt"));
+        if (sourceError) {
+            [[DOUIManager sharedInstance] sendLog:[NSString stringWithFormat:@"Could not add ReProvision source: %@", sourceError.localizedDescription] debug:NO];
+        }
         
         NSString *mobilePreferencesPath = JBROOT_PATH(@"/var/mobile/Library/Preferences");
         if (![[NSFileManager defaultManager] fileExistsAtPath:mobilePreferencesPath]) {
