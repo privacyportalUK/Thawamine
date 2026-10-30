@@ -31,6 +31,7 @@ Built on **[Dopamine by opa334](https://github.com/opa334/Dopamine)** and **[Che
 | :--- | :--- |
 | **Replacement-screen handling** | Uses selective restarts to address the touch freeze seen on the tested iPhone 8 Plus. |
 | **Sileo & Zebra** | Registers both package-manager apps automatically. |
+| **ReProvision source** | Adds the ReProvision repository during jailbreak setup, including existing installations, while preserving configured sources. |
 | **Tweak support** | Retains package-manager and tweak support; ElleKit installation through Sileo was tested successfully. |
 | **Device checks** | The app and restart helpers enforce the same exact model and iOS-build allowlist. |
 
@@ -94,6 +95,12 @@ One option is **[Sideloadly for macOS or Windows](https://sideloadly.io/)**. You
 > After a full device restart, reopen **Thawamine** and tap **Jailbreak** again. A respring is different from restarting the phone.
 >
 > With a free Apple account, Sideloadly-signed apps normally need refreshing every **7 days**. Refresh or re-sign before expiry, retaining the same signing account and bundle identifier when updating.
+
+### ReProvision renewal
+
+Thawamine adds the [ReProvision repository](https://b4db1r3r3p0.yourepo.com/) automatically when you jailbreak. Existing source entries, including disabled entries, are preserved. Open Sileo to install ReProvision, then complete Apple Account sign-in and renewal setup on the phone. Automatic renewal requires an active jailbreak and internet access; adding the source does not make the app permanently signed.
+
+If the repository's package download fails, download the publisher's [rootless ReProvision package](https://github.com/qnblackcat/ReProvision-Reborn-Again/releases/download/0.8.4-roothide.5/com.yourepo.b4db1r3r3p0.reprovisionrebornagain_0.8.4-rootless.30_iphoneos-arm64.deb) on the iPhone and use **Files → Share → Sileo** to install it. Stop and contact PrivacyPortal if sign-in asks you to remove a certificate, or the existing jailbreak app shows **ADD** instead of **SIGN**.
 
 ## Troubleshooting
 
